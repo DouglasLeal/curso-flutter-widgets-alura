@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/screens/components/difficulty.dart';
+import 'package:flutter_widgets/components/difficulty.dart';
 
 class Tasks extends StatefulWidget {
   final String nome;
   final String foto;
   final int dificuldade;
 
-  const Tasks(this.nome, this.foto, this.dificuldade, {Key? key}) : super(key: key);
+  const Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
+      : super(key: key);
 
   @override
   State<Tasks> createState() => _TasksState();
@@ -15,7 +16,7 @@ class Tasks extends StatefulWidget {
 class _TasksState extends State<Tasks> {
   int level = 1;
 
-  void levelUp(){
+  void levelUp() {
     setState(() {
       level++;
     });
