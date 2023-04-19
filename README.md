@@ -19,5 +19,5 @@
 
 <h2>Imagens</h2>
 <div align="center">
-    <img width="33%" src="https://raw.githubusercontent.com/DouglasLeal/curso-flutter-persistencia-alura/main/assets/screenshots/img1.png" />
+    <img width="33%" src="https://raw.githubusercontent.com/DouglasLeal/curso-flutter-widgets-alura/main/assets/screenshots/img1.png" />
 </div>
