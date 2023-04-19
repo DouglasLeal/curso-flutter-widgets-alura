@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/components/tasks.dart';
+import 'package:flutter_widgets/components/task.dart';
+import 'package:flutter_widgets/data/task_inherited.dart';
+import 'package:flutter_widgets/screens/form_screen.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({Key? key}) : super(key: key);
@@ -10,48 +12,26 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   @override
-  bool opacidade = true;
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter: Primeiros Passos'),
-        leading: Icon(Icons.add_task),
+        leading: Container(),
+        title: const Text('Tarefas'),
       ),
-      body: AnimatedOpacity(
-        opacity: opacidade ? 1.0 : 0.0,
-        duration: const Duration(milliseconds: 500),
-        child: Container(
-          color: const Color.fromARGB(255, 208, 221, 237),
-          child: ListView(
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(top: 8),
-                child: Tasks('Estudar Flutter', 'assets/images/flutter.png', 3),
-              ),
-              Tasks('Andar de Bike', 'assets/images/bike.jpg', 2),
-              Tasks('Ler 50 páginas', 'assets/images/ler.jpg', 1),
-              Tasks('Meditar', 'assets/images/meditar.jpg', 4),
-              Tasks(
-                'Jogar',
-                'assets/images/jogar.jpg',
-                0,
-              ),
-              SizedBox(
-                height: 100,
-              ),
-            ],
-          ),
-        ),
+      body: ListView(
+        padding: const EdgeInsets.only(top: 8,bottom: 70),
+        children: TaskInherited.of(context).taskList,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            opacidade = !opacidade;
-          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (contextNew) => FormScreen(),
+            ),
+          );
         },
-        backgroundColor: Colors.blue[100],
-        child: const Icon(Icons.remove_red_eye),
+        child: const Icon(Icons.add),
       ),
     );
   }

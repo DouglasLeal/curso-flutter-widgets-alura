@@ -1,32 +1,44 @@
 import 'package:flutter/material.dart';
 
 class Difficulty extends StatelessWidget {
-  final int difficulty;
 
-  const Difficulty(this.difficulty, {Key? key}) : super(key: key);
+  final int difficultyLevel;
+
+  const Difficulty({
+    required this.difficultyLevel,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Icon(Icons.star,
-              size: 15,
-              color: (difficulty >= 1) ? Colors.blue : Colors.blue[100]),
-          Icon(Icons.star,
-              size: 15,
-              color: (difficulty >= 2) ? Colors.blue : Colors.blue[100]),
-          Icon(Icons.star,
-              size: 15,
-              color: (difficulty >= 3) ? Colors.blue : Colors.blue[100]),
-          Icon(Icons.star,
-              size: 15,
-              color: (difficulty >= 4) ? Colors.blue : Colors.blue[100]),
-          Icon(Icons.star,
-              size: 15,
-              color: (difficulty >= 5) ? Colors.blue : Colors.blue[100]),
-        ],
-      ),
+    return Row(
+      children: [
+        Icon(
+          Icons.star,
+          size: 15,
+          color: (difficultyLevel >= 1) ? Colors.blue : Colors.blue[100],
+        ),
+        Icon(
+          Icons.star,
+          size: 15,
+          color: (difficultyLevel >= 2) ? Colors.blue : Colors.blue[100],
+        ),
+        Icon(
+          Icons.star,
+          size: 15,
+          color: (difficultyLevel >= 3) ? Colors.blue : Colors.blue[100],
+        ),
+        Icon(
+          Icons.star,
+          size: 15,
+          color: (difficultyLevel >= 4) ? Colors.blue : Colors.blue[100],
+        ),
+        Icon(
+          Icons.star,
+          size: 15,
+          color: (difficultyLevel >= 5) ? Colors.blue : Colors.blue[100],
+        ),
+      ],
     );
   }
 }
